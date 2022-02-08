@@ -1,32 +1,60 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="center examplex">
+      <vs-navbar center-collapsed>
+        <template #left>
+        <vs-button
+        dark
+        >
+          IBE-LBME-IMG-PROC
+        </vs-button>
+        </template>
+        <vs-navbar-item id="home">
+            <vs-button
+                transparent size="l">
+            <router-link to="/">
+                Home
+            </router-link>
+            </vs-button>
+        </vs-navbar-item>
+        
+        <vs-navbar-item  id="my-images">
+            <vs-button size="l"
+                transparent>
+            <router-link to="/my-images">My Images</router-link>
+            </vs-button>
+        </vs-navbar-item>
+        <vs-navbar-item id="upload-image">
+            <vs-button
+                transparent size="l">
+            <router-link to="/upload-images">Upload Image</router-link>
+            </vs-button>
+        </vs-navbar-item>
+        <template #right>
+          <vs-button flat >Login</vs-button>
+          <vs-button>Get Started</vs-button>
+        </template>
+      </vs-navbar>
+      <div id="hide-scroll-content" class="square">
+        <div class="center grid">
+            <vs-row>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
+                <router-view/>
+            </vs-col>
+            </vs-row>
+            </div>
+        </div>
     </div>
-    <router-view/>
-  </div>
 </template>
-
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: "RobotoSlabLight";
+    font-family: "Roboto Slab"; 
+}
+a:link, a:visited {
+    color: blue;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+a, u {
+  text-decoration: none;
 }
 </style>
