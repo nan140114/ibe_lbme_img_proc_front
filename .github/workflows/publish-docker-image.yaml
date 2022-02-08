@@ -20,7 +20,7 @@ jobs:
         echo ${{ secrets.CI_CD_SA_KEY }} | base64 -d > keyfile.json
         cat keyfile.json | docker login -u _json_key --password-stdin https://us.gcr.io
         export VERSION=$(npm run version --silent)
-        export NAME=$(npm run version --silent)
+        export NAME=$(npm run name --silent)
         docker build -t $NAME .
         docker tag  $NAME us.gcr.io/dev-ibe-lbme-img-proc/$NAME:$VERSION
         docker push us.gcr.io/dev-ibe-lbme-img-proc/$NAME:$VERSION
