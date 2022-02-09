@@ -1,24 +1,5 @@
-# frontend
+# ibe_lbme_img_proc_front
+This repository defines and publishes the frontend component. It has a development branch using the secrets of the development Github environment to authenticate against the Container repository and to publish the Docker image that contains the distribution version of the application and serves the static files with the NGINX server. The repository root is a VueJS+ Vuex application, The application contains the logic to upload images, retrieve images and make public an image.
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The solution entry point is the Front-end Container (image-proc-app)
+The user 123 is set by default. The Home link shows the public images. My Images link shows a list of the images uploaded by the user and a set of properties, size, width, height, and if the image is valid. If you just uploaded a new image and the data is for example height and width 0, don't worry the image processing container is working just wait some seconds and click the reload button. And the Upload Image link allows you to upload a new image. If you want to change the user, just type a short number in the input field at the top-right to identify your user and click the login button. This is a fake login. The button just changes the user id in the VueJS store used to retrieve and upload images.
